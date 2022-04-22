@@ -1,11 +1,11 @@
 package com.example.loonaverse.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -15,8 +15,13 @@ public class Song implements Serializable    {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToMany(mappedBy = "songs")
+    private Set<Artist> artists;
     private String trackName;
-    private String artist;
+    @Lob
+    @Column(name="description", length=512)
     private String description;
     private Long duration;
+    private String url;
+    private String color;
 }
