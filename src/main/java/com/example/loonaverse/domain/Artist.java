@@ -30,5 +30,8 @@ public class Artist implements Serializable    {
     private String color;
     private String name;
     private String subunit;
+    @Lob
+    @Column(name="info", length=512)
     private String info;
+    private String image;
 }

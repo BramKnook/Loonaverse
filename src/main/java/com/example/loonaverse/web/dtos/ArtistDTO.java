@@ -10,5 +10,5 @@ public class ArtistDTO {
     private String name;
     private String subunit;
     private String info;
-
+    private String image;
 }

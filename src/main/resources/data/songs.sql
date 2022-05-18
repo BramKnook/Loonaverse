@@ -21,7 +21,7 @@ values (
 insert into songs (id, description, duration, track_name, url, color)
 values (
         3,
-        'Haseul’s “Let Me In”,is a blockbuster track that starts as a calm winter ballad before strings roar over like a blizzard.',
+        'Haseul’s “Let Me In”,is a blockbuster track that starts as a calm winter ballad before strings roar over like a blizzard. Digipedi and BlockBerryCreative filmed in faraway Iceland for the music video, and fulfilled the music’s scale through the scenery of Iceland.',
         192,
         'Let Me In',
         'https://www.youtube.com/embed/6a4BWpBJppI',
@@ -91,7 +91,7 @@ values (
 insert into songs (id, description, duration, track_name, url, color)
 values (
         10,
-        'In Chuu''s title track, “Heart Attack”, Chuu attacks the fans’ hearts with her positive energy, suggesting to live life full of happiness, in the loveliest way',
+        'In Chuu''s title track, “Heart Attack”, Chuu attacks the fans’ hearts with her positive energy, suggesting to live life full of happiness, in the loveliest way. The titled track “Heart Attack” does not interpret the feelings of being in love in a serious way, but with Chuu’s own adorable emoticon-like ways.',
         244,
         'Heart Attack',
         'https://www.youtube.com/embed/BVVfMFS3mgc',
