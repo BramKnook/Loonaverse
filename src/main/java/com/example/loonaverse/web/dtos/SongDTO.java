@@ -11,4 +11,5 @@ public class SongDTO {
     private Long duration;
     private String url;
     private String color;
+    private String summary;
 }

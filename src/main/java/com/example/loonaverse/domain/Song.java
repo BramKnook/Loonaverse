@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -24,4 +23,7 @@ public class Song implements Serializable    {
     private Long duration;
     private String url;
     private String color;
+    @Lob
+    @Column(name="summary", length=2048)
+    private String summary;
 }
