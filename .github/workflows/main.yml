@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -21,5 +23,9 @@ jobs:
         run: chmod +x ./gradlew
       - name: Build with Gradle
         run: ./gradlew build
+      - name: Unit Tests
+        run: ./gradlew test
+      - name: Integration Tests
+        run: ./gradlew integrationTest
 
 
