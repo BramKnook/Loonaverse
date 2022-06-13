@@ -1,0 +1,31 @@
+version: '2'
+networks:
+  application:
+    internal: true
+services:
+
+  database:
+    image: mysql:5.7
+    networks:
+      - application
+    # volumes:
+    #     - ~/volumes/jhipster/backend/mysql/:/var/lib/mysql/
+    environment:
+      - MYSQL_USER=Loonaverse
+      - MYSQL_ROOT_PASSWORD=Loonaverse
+      - MYSQL_PASSWORD=Loonaverse
+      - MYSQL_DATABASE=Loonaverse
+    ports:
+      - 3306:3306
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+
+  backend:
+    image: loonaverse
+    networks:
+      - application
+    depends_on:
+      - database
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/Loonaverse?useSSL=false&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=Loonaverse
+      - SPRING_DATASOURCE_PASSWORD=Loonaverse
