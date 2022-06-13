@@ -1,15 +1,8 @@
 version: '2'
-networks:
-  application:
-    internal: true
 services:
 
   database:
     image: mysql:5.7
-    networks:
-      - application
-    # volumes:
-    #     - ~/volumes/jhipster/backend/mysql/:/var/lib/mysql/
     environment:
       - MYSQL_USER=Loonaverse
       - MYSQL_ROOT_PASSWORD=Loonaverse
@@ -21,8 +14,8 @@ services:
 
   backend:
     image: loonaverse
-    networks:
-      - application
+    ports:
+      - 8080:8080
     depends_on:
       - database
     environment:

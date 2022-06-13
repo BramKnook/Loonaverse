@@ -31,10 +31,11 @@ class SongResourceIT {
     private ObjectMapper objectMapper;
 
     @Container
-    private static MySQLContainer<?> mySQLdb = new MySQLContainer<>("mysql:latest")
+    private static MySQLContainer<?> mySQLdb = new MySQLContainer<>("mysql:5.7")
             .withDatabaseName("Loonaverse")
             .withUsername("Loonaverse")
             .withPassword("Loonaverse")
+            .withCommand("mysqld", "--lower_case_table_names=1", "--skip-ssl", "--character_set_server=utf8mb4", "--explicit_defaults_for_timestamp")
             .withExposedPorts(3306)
             .waitingFor(Wait.forListeningPort());
 
@@ -48,7 +49,7 @@ class SongResourceIT {
     @Test
     void getAllSongs() throws Exception {
         mockMvc.perform(
-                get("/songs")
+                        get("/songs")
                 ).andExpect(status().isOk())
                 .andExpect(jsonPath("$").isArray())
                 .andExpect(jsonPath("$.length()").value(12));
