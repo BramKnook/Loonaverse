@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ExtendWith(SpringExtension.class)
-class SongResourceIT {
+class ArtistResourceIT {
     @Autowired
     private MockMvc mockMvc;
 
@@ -45,7 +45,7 @@ class SongResourceIT {
     @Test
     void getAllSongs() throws Exception {
         mockMvc.perform(
-                get("/songs")
+                get("/artists")
                 ).andExpect(status().isOk())
                 .andExpect(jsonPath("$").isArray())
                 .andExpect(jsonPath("$.length()").value(12));
