@@ -11,6 +11,7 @@ import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.testcontainers.containers.MySQLContainer;
+import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
@@ -34,7 +35,8 @@ class SongResourceIT {
             .withDatabaseName("Loonaverse")
             .withUsername("Loonaverse")
             .withPassword("Loonaverse")
-            .withExposedPorts(3306);
+            .withExposedPorts(3306)
+            .waitingFor(Wait.forListeningPort());
 
     @DynamicPropertySource
     static void registerPgProperties(DynamicPropertyRegistry registry) {
