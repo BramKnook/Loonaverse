@@ -41,7 +41,6 @@ class SongResourceIT {
 
     @DynamicPropertySource
     static void registerPgProperties(DynamicPropertyRegistry registry) {
-        System.out.println("haha bier");
         registry.add("spring.datasource.url", () ->
                 String.format("jdbc:mysql://%s:%s/Loonaverse?useSSL=false&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true", mySQLdb.getHost(), mySQLdb.getFirstMappedPort()));
     }

@@ -46,7 +46,7 @@ class ArtistResourceIT {
     }
 
     @Test
-    void getAllSongs() throws Exception {
+    void getAllArtists() throws Exception {
         mockMvc.perform(
                 get("/artists")
                 ).andExpect(status().isOk())
