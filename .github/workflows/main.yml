@@ -41,5 +41,7 @@ jobs:
         with:
           push: true
           tags: user/app:latest
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
 
 
